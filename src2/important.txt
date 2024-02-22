@@ -1,0 +1,9 @@
+Important properties on config
+
+"noUnusedLocals": true,                       
+"noUnusedParameters": true,       
+"noImplicitReturns": true, 
+"strict": true,
+"noEmitOnError": true,
+"sourceMap": true,
+"outDir": "./dist"
