@@ -1,28 +1,27 @@
-import React, { useState }  from 'react'
-import InputF from "./components/inputField"
-import { Todo } from "./model"
+import React, { useState } from 'react'
 import './App.css';
+import {Greet} from "./components/Greet"
+import { Person } from "./components/Person"
 
-const App: React.FC = () =>  {
-  const [todo, setTodo] = useState<string>("")
-  const [todos, setTodos] = useState<Todo[]>([])
+interface Name {
+  first: string,
+  last: string
+}
 
-  console.log(todo)
+const App: React.FC = () => {
 
-  const handleAdd = (e: React.FormEvent) => {
-    e.preventDefault()
-    setTodos([...todos, {id: Date.now(), todo: todo, isDone:false}])
-  }
+  const names: Name[] = [
+    {
+      first: "Ryan",
+      last:"Freas"
+    }
+  ]
+
 
   return (
     <div className="App">
-      <span className="head">Taskify</span>
-      <InputF todo={todo} setTodo={setTodo} handleAdd={handleAdd}  /> 
-      {
-        todos.map((item, index) => (
-          <li key={index}>{item.todo}</li>
-        ))
-      }
+      <Greet name={"Ryan"} />
+      <Person names={names} />
     </div>
   );
 }
