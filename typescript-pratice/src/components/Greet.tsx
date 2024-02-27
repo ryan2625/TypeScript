@@ -10,4 +10,4 @@ export const Greet: React.FC<GreetProps> = ({ name }) => {
       <h2>Welcome {name}</h2>
     </div>
   );
-}
+  }
